@@ -1,26 +1,37 @@
+import { useState } from 'react';
 
 const App = () => {
-    const isLogged = true;
-    const loggedInMessage = 'User found, Welcome to the React app!';
-    const loggedOutMessage = 'No user found';
+    const [recipe, addRecipe] = useState({
+        name: "",
+        ingrediants: "",
+        instructions: "",
+    });
 
     return (
         <div className="App">
-            <h1>Hello World</h1>
-            <p>I am coding in React!</p>
-            <div>
-                {isLogged ? (
-                    <p>
-                        {loggedInMessage}
-                    </p> 
-                ) : (
-                    <p>
-                        {loggedOutMessage}
-                    </p>
-                )}
-            </div> 
+            <h1 align="center">
+                Welcome to my recipe manager
+            </h1>
+            <div>{recipe}</div>
+            <button onClick={addRecipe({
+                name: 'Crab Linguine',
+                ingrediants: 'Crab, linguine, tomatoe, garlic',
+                instructions: 'Heat up crab, boil pasta, chop tomatoes and mix with crab and pasta',
+            })}>
+                Add Recipe
+            </button>
         </div>
-    );
+    )
+}
+
+const Recipe = (props) => {
+    return (
+        <>
+            <h2>Name: {props.name}</h2>
+            <h3>Ingrediants: {props.ingrediants}</h3>
+            <p>Instructions: {props.instructions}</p>
+        </>
+    )
 }
 
 export default App;
