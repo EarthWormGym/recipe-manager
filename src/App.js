@@ -9,12 +9,18 @@ const API_URL = 'http://www.omdbapi.com?apikey=adaa5ccf'
 const App = () => {
     const [recipes, setRecipe] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
+    const [recipeName, setRecipeName] = useState('');
 
     const searchRecipes = async (title) => {
         const response = await fetch(`${API_URL}&s=${title}`)
         const data = await response.json();
 
         setRecipe(data.Search);
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert(`The Recipe name entered is: ${recipeName}`)
     }
 
     useEffect(() => {
@@ -37,6 +43,29 @@ const App = () => {
                     onClick={() => searchRecipes(searchTerm)}
                 />
             </div>
+
+            <form onSubmit={handleSubmit}>
+                <label>
+                    Recipe Name:
+                    <input type="text" 
+                        value={recipeName}
+                        onChange={(e) => setRecipeName(e.target.value)}
+                    />
+                </label>
+                <label>
+                    Meal Picture:
+                    <input type="image" />
+                </label>
+                <label>
+                    Ingrediants:
+                    <input type="text" />
+                </label>
+                <label>
+                    Meal Type:
+                    <input type="text" />
+                </label>
+                <input type="submit" value="Submit" />
+            </form>
 
             {recipes?.length > 0
                 ? (
