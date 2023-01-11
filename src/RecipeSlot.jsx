@@ -7,7 +7,7 @@ const RecipeSlot = ({ recipe }) => {
                 <p>{recipe.Name}</p>
             </div>
             <div>
-                <img src={recipe.mealPicture} alt={recipe.Name}/>
+                <img src={recipe.Picture} alt={recipe.Name}/>
             </div>
             <div>
                 <span>{recipe.Type}</span>
