@@ -1,62 +1,78 @@
 import React from "react";
 import { useState } from 'react';
 
-const RecipeForm = () => {
+const RecipeForm = (props) => {
 
-    const [state, setState] = useState({
-        recipeName: "",
-        ingrediants: "",
-        picture: "",
-        type: ""
-    });
+    // const [state, setState] = useState({
+    //     recipeName: "",
+    //     ingrediants: "",
+    //     picture: "",
+    //     type: ""
+    // });
 
-    const handleChange = (event) => {
-        const value = event.target.value;
-        setState({
-            ...state,
-            [event.target.recipeName]: value,
-            [event.target.ingrediants]: value,
-            [event.target.picture]: value,
-            [event.target.type]: value
-        });
-    };
+    // const handleChange = (event) => {
+    //     const value = event.target.value;
+    //     let newRecipe = this.state.recipe
+    //     setState({
+    //         ...state,
+    //         [event.target.recipeName]: value,
+    //         [event.target.ingrediants]: value,
+    //         [event.target.picture]: value,
+    //         [event.target.type]: value
+    //     });
+    // };
+
+    const [recipe, setRecipe] = useState('');
+
+    const handleChange = (e) => {
+        setRecipe(e.target.value);
+    }
     
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(state);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        props.onSubmit({
+            id: Math.floor(Math.random() * 10000),
+            text: recipe
+        });
+
+        setRecipe(recipe);
+
+        console.log(recipe);
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form style={{backgroundColor: 'powderblue', margin: '20px'}} onSubmit={handleSubmit}>
             <div>
                 <label>
                     Recipe Name:
                     <input 
                         type="text" 
                         name="recipeName"
-                        value={state.recipeName.value}
+                        value={recipe}
                         onChange={handleChange}
                     />
                 </label>
             </div>
-            <div>
+            {/* <div>
                 <label>
                     Ingrediants:
                     <input 
                         type="text" 
                         name="recipeIngrediants"
-                        value={state.ingrediants.value}
+                        value={state.ingrediants || ""}
                         onChange={handleChange}
                     />
-                </label>
+                </label>.recipeName
             </div>
             <div>
                 <label>
                     Recipe Picture:
                     <input 
-                        type="image" 
+                        type="image"
+                        alt="image error"
                         name="recipeImage"
-                        value={state.picture.value}
+                        value={state.picture || ""}
                         onChange={handleChange}
                     />
                 </label>
@@ -64,7 +80,7 @@ const RecipeForm = () => {
             <div>
                 <label>
                     Recipe Type:
-                    <select name="recipeType" defaultValue="Select..." value={state.type.value} onChange={handleChange}>
+                    <select name="recipeType" defaultValue="Select..." value={state.type || ""} onChange={handleChange}>
                         <option value="african">African</option>
                         <option value="asian">Asian</option>
                         <option value="indian">Indian</option>
@@ -72,7 +88,7 @@ const RecipeForm = () => {
                         <option value="japanese">Japanese</option>
                     </select>
                 </label>
-            </div>
+            </div> */}
             <input type="submit" value="Submit" />
         </form>
     );

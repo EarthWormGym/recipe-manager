@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RecipeSlot = ({ recipe }) => {
+const Recipe = ({ recipe }) => {
     return (
         <div className="recipe">
             <div>
@@ -17,4 +17,4 @@ const RecipeSlot = ({ recipe }) => {
     );
 }
 
-export default RecipeSlot;
+export default Recipe;
