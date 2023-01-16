@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Recipe from './Recipe';
 import RecipeForm from './RecipeForm'
 
 function RecipeList() {
@@ -19,6 +20,7 @@ function RecipeList() {
     <div>
         <h1>What you cooking today?</h1>
         <RecipeForm onSubmit={addRecipe} />
+        <Recipe recipes={recipes} />
     </div>
   )
 }
