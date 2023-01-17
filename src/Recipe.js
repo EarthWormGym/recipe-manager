@@ -1,16 +1,24 @@
 import React from 'react';
-import RecipeForm from './RecipeForm';
-import RecipeList from './RecipeList';
 
 const Recipe = ({recipes}) => {
 
+    console.log(recipes);
     return recipes.map((recipe, index) => (
-        <div 
-            className="recipe"
-            key={index}
-        >
+        <div className="recipe" key={index}>
             <div key={recipe.id}>
-                {recipe.text}
+                {recipe.recipeData.recipeName}
+            </div>
+            <div key={recipe.id}>
+                {recipe.recipeData.ingredients}
+            </div>
+            <div key={recipe.id}>
+                {recipe.recipeData.instructions}
+            </div>
+            <div key={recipe.id}>
+                {recipe.recipeData.image}
+            </div>
+            <div key={recipe.id}>
+                {recipe.recipeData.mealType}
             </div>
         </div>
     ));

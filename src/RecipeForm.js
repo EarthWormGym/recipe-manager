@@ -3,10 +3,22 @@ import { useState } from 'react';
 
 const RecipeForm = (props) => {
 
-    const [recipe, setRecipe] = useState('');
+    const [recipe, setRecipe] = useState({
+        recipeName: '',
+        ingredients: '',
+        instructions: '',
+        image: null,
+        mealType: ''
+    });
 
     const handleChange = (e) => {
-        setRecipe(e.target.value);
+        const { fileName, files } = e.target;
+        const { name, value } = e.target;
+        if (e.target.name === 'image') {
+            setRecipe({...recipe, [fileName]: files[0] });
+        } else {
+            setRecipe({...recipe, [name]: value });
+        }
     }
     
     const handleSubmit = (e) => {
@@ -14,12 +26,10 @@ const RecipeForm = (props) => {
 
         props.onSubmit({
             id: Math.floor(Math.random() * 10000),
-            text: recipe
+            recipeData: recipe
         });
 
         setRecipe(recipe);
-
-        console.log(recipe);
     };
 
     return (
@@ -30,14 +40,65 @@ const RecipeForm = (props) => {
                     <input 
                         type="text" 
                         name="recipeName"
-                        value={recipe}
+                        value={recipe.recipeName}
                         onChange={handleChange}
                     />
                 </label>
             </div>
-            <input type="submit" value="Submit" />
+            <div>
+                <label>
+                    Ingredients:
+                    <input
+                        type="text" 
+                        name="ingredients"
+                        value={recipe.ingredients}
+                        onChange={handleChange}
+                    />
+                </label>
+            </div>
+            <div>
+                <label>
+                    Instructions:
+                    <input 
+                        type="text" 
+                        name="instructions"
+                        value={recipe.instructions}
+                        onChange={handleChange}
+                    />
+                </label>
+            </div>
+            <div>
+                <label>
+                    Image:
+                    <input 
+                        type="file" 
+                        name="image"
+                        onChange={handleChange}
+                        accept="image/*"
+                    />
+                </label>
+            </div>
+            <div>
+                <label>
+                    Type of meal:
+                    <select 
+                        name="mealType"
+                        value={recipe.mealType}
+                        onChange={handleChange}
+                    >
+                        <option value="N/A">N/A</option>
+                        <option value="Asian">Asian</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Mexican">Mexican</option>
+                        <option value="Indian">Indian</option>
+                        <option value="Spanish">Spanish</option>
+                    </select>
+                </label>
+            </div>
+            <button type="submit">Submit</button>
         </form>
     );
 }
 
 export default RecipeForm;
+

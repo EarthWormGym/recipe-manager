@@ -6,14 +6,9 @@ function RecipeList() {
   const [recipes, setRecipes] = useState([]);
 
   const addRecipe = recipe => {
-    if(!recipe.text || /^\s*$/.test(recipe.text)) {
-        return
-    }
-
     const newRecipes = [recipe, ...recipes]
-
+    
     setRecipes(newRecipes);
-    console.log(...recipes);
   };
 
   return (
