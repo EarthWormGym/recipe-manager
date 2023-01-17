@@ -39,69 +39,77 @@ const RecipeForm = (props) => {
     };
 
     return (
-        <form style={{backgroundColor: 'powderblue', margin: '20px'}} onSubmit={handleSubmit}>
-            <div>
-                <label>
-                    Recipe Name:
-                    <input 
-                        type="text" 
-                        name="recipeName"
-                        value={recipe.recipeName}
-                        onChange={handleChange}
-                    />
-                </label>
+        <form onSubmit={handleSubmit}>
+            <div class="center">
+
+                <h1>Recipe Form</h1>
+
+                <div class="inputbox">
+                    <label>
+                        Recipe Name:
+                        <input 
+                            type="text" 
+                            name="recipeName"
+                            value={recipe.recipeName}
+                            onChange={handleChange}
+                        />
+                    </label>
+                </div>
+                <div class="inputbox">
+                    <label>
+                        Ingredients:
+                        <input
+                            type="text" 
+                            name="ingredients"
+                            value={recipe.ingredients}
+                            onChange={handleChange}
+                        />
+                    </label>
+                </div>
+                <div class="inputbox">
+                    <label>
+                        Instructions:
+                        <input 
+                            type="text" 
+                            name="instructions"
+                            value={recipe.instructions}
+                            onChange={handleChange}
+                        />
+                    </label>
+                </div>
+                <div class="inputbox">
+                    <label>
+                        Image:
+                        <input 
+                            type="file" 
+                            name="image"
+                            onChange={handleChange}
+                            accept="image/*"
+                        />
+                    </label>
+                </div>
+                <div class="inputbox">
+                    <label>
+                        Type of meal:
+                        <select 
+                            name="mealType"
+                            value={recipe.mealType}
+                            onChange={handleChange}
+                        >
+                            <option value="N/A">N/A</option>
+                            <option value="Asian">Asian</option>
+                            <option value="Italian">Italian</option>
+                            <option value="Mexican">Mexican</option>
+                            <option value="Indian">Indian</option>
+                            <option value="Spanish">Spanish</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="inputbox">
+                    <button type="submit">Submit</button>
+                </div>
+
             </div>
-            <div>
-                <label>
-                    Ingredients:
-                    <input
-                        type="text" 
-                        name="ingredients"
-                        value={recipe.ingredients}
-                        onChange={handleChange}
-                    />
-                </label>
-            </div>
-            <div>
-                <label>
-                    Instructions:
-                    <input 
-                        type="text" 
-                        name="instructions"
-                        value={recipe.instructions}
-                        onChange={handleChange}
-                    />
-                </label>
-            </div>
-            <div>
-                <label>
-                    Image:
-                    <input 
-                        type="file" 
-                        name="image"
-                        onChange={handleChange}
-                        accept="image/*"
-                    />
-                </label>
-            </div>
-            <div>
-                <label>
-                    Type of meal:
-                    <select 
-                        name="mealType"
-                        value={recipe.mealType}
-                        onChange={handleChange}
-                    >
-                        <option value="N/A">N/A</option>
-                        <option value="Asian">Asian</option>
-                        <option value="Italian">Italian</option>
-                        <option value="Mexican">Mexican</option>
-                        <option value="Indian">Indian</option>
-                        <option value="Spanish">Spanish</option>
-                    </select>
-                </label>
-            </div>
-            <button type="submit">Submit</button>
         </form>
     );
 }
