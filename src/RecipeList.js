@@ -13,7 +13,6 @@ function RecipeList() {
 
   return (
     <div>
-        <h1>What you cooking today?</h1>
         <RecipeForm onSubmit={addRecipe} />
         <Recipe recipes={recipes} />
     </div>

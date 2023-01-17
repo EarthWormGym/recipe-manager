@@ -15,7 +15,7 @@ const Recipe = ({recipes}) => {
                 {recipe.recipeData.instructions}
             </div>
             <div key={recipe.id}>
-                {recipe.recipeData.image}
+                <img src={recipe.recipeData.image} alt="image of meal" />
             </div>
             <div key={recipe.id}>
                 {recipe.recipeData.mealType}

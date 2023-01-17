@@ -10,16 +10,6 @@ const App = () => {
         <div className="app">
             <h1>Recipe Manager</h1>
 
-            <div className='search'>
-                <input
-                    placeholder="Search for recipe"
-                />
-                <img 
-                    src={SearchIcon}
-                    alt="search"
-                />
-            </div>
-
             <div>
                 <RecipeList />
             </div>

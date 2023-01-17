@@ -12,13 +12,19 @@ const RecipeForm = (props) => {
     });
 
     const handleChange = (e) => {
-        const { fileName, files } = e.target;
         const { name, value } = e.target;
-        if (e.target.name === 'image') {
-            setRecipe({...recipe, [fileName]: files[0] });
+
+        if (name === 'image') {
+            const reader = new FileReader();
+            reader.onloadend = function() {
+                setRecipe({...recipe, [name]: reader.result });
+            }
+            reader.readAsDataURL(e.target.files[0])
         } else {
             setRecipe({...recipe, [name]: value });
         }
+        
+        setRecipe({...recipe, [name]: value });
     }
     
     const handleSubmit = (e) => {
