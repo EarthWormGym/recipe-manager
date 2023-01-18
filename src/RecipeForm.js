@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from 'react';
+import './RecipeForm.css';
 
 const RecipeForm = (props) => {
 
@@ -39,12 +40,13 @@ const RecipeForm = (props) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <container>
+        <form onSubmit={handleSubmit} class="recipe-form container" >
             <div class="center">
 
                 <h1>Recipe Form</h1>
 
-                <div class="inputbox">
+                <div class="form-input-material">
                     <label>
                         Recipe Name:
                         <input 
@@ -52,10 +54,11 @@ const RecipeForm = (props) => {
                             name="recipeName"
                             value={recipe.recipeName}
                             onChange={handleChange}
+                            class="form-control-material"
                         />
                     </label>
                 </div>
-                <div class="inputbox">
+                <div class="form-input-material">
                     <label>
                         Ingredients:
                         <input
@@ -63,10 +66,11 @@ const RecipeForm = (props) => {
                             name="ingredients"
                             value={recipe.ingredients}
                             onChange={handleChange}
+                            class="form-control-material"
                         />
                     </label>
                 </div>
-                <div class="inputbox">
+                <div class="form-input-material">
                     <label>
                         Instructions:
                         <input 
@@ -74,10 +78,11 @@ const RecipeForm = (props) => {
                             name="instructions"
                             value={recipe.instructions}
                             onChange={handleChange}
+                            class="form-control-material"
                         />
                     </label>
                 </div>
-                <div class="inputbox">
+                <div class="form-input-material">
                     <label>
                         Image:
                         <input 
@@ -88,7 +93,7 @@ const RecipeForm = (props) => {
                         />
                     </label>
                 </div>
-                <div class="inputbox">
+                <div class="form-input-material">
                     <label>
                         Type of meal:
                         <select 
@@ -105,12 +110,13 @@ const RecipeForm = (props) => {
                         </select>
                     </label>
                 </div>
-                <div class="inputbox">
-                    <button type="submit">Submit</button>
+                <div>
+                    <button type="submit" class="form-submit-btn">Submit</button>
                 </div>
 
             </div>
         </form>
+        </container>
     );
 }
 

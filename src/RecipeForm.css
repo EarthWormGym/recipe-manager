@@ -1,0 +1,55 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #eceffc;
+}
+
+.form-submit-btn {
+  background-color: rgb(235, 94, 240); /* sets the background color of the button to blue */
+  color: white; /* sets the text color of the button to white */
+  padding: 12px 24px; /* sets the padding of the button to 12px top/bottom, 24px left/right */
+  border-radius: 4px; /* rounds the corners of the button with a 4px radius */
+  text-align: center; /* centers the text within the button */
+  transition: background-color 0.2s ease; /* sets a transition for the background-color property, to make the hover effect smooth */
+}
+
+.form-submit-btn:hover {
+  background-color: rgb(151, 13, 163); /* sets the background color of the button to dark blue when hovered */
+  cursor: pointer; /* changes the cursor to a pointer when hovered */
+}
+
+
+.form-input-material {
+  --input-default-border-color: white;
+  --input-border-bottom-color: white;
+  color: white;
+}
+
+.recipe-form {
+  align-items: center;
+  padding: 50px 40px;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
+    0 1px 1px rgba(128, 128, 128, 0.155),
+    0 2.1px 2.1px rgba(128, 128, 128, 0.195),
+    0 4.4px 4.4px rgba(128, 128, 128, 0.241),
+    0 12px 12px rgba(128, 128, 128, 0.35);
+}
+.recipe-form h1 {
+    margin: 0 0 24px 0;
+}
+
+.recipe-form .form-input-material {
+    margin: 12px 0;
+}
+
+.container {
+  display: flex;
+  width: 500px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

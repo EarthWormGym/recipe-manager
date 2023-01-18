@@ -1,7 +1,3 @@
-import { useState, useEffect } from 'react';
-
-import './App.css';
-import SearchIcon from './search.svg';
 import RecipeList from './RecipeList';
 
 const App = () => {
