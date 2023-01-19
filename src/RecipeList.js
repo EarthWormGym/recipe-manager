@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Recipe from './Recipe';
 import RecipeForm from './RecipeForm'
+import './CSS/RecipeList.css';
 
 function RecipeList() {
   const [recipes, setRecipes] = useState([]);
@@ -13,8 +14,12 @@ function RecipeList() {
 
   return (
     <div>
-        <RecipeForm onSubmit={addRecipe} />
+      <div>
+        <RecipeForm onSubmit={addRecipe} />  
+      </div>
+      <div class="list-container">
         <Recipe recipes={recipes} />
+      </div>
     </div>
   )
 }

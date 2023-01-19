@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from 'react';
-import './RecipeForm.css';
+import './CSS/RecipeForm.css';
 
 const RecipeForm = (props) => {
 
@@ -37,86 +37,93 @@ const RecipeForm = (props) => {
         });
 
         setRecipe(recipe);
+        setRecipe({
+            recipeName: '',
+            ingredients: '',
+            instructions: '',
+            image: null,
+            mealType: ''
+        })
     };
 
     return (
-        <container>
-        <form onSubmit={handleSubmit} class="recipe-form container" >
-            <div class="center">
+        <div class="expanded-form-container">
+            <form onSubmit={handleSubmit} class="recipe-form form-container" >
+                <div class="center">
 
-                <h1>Recipe Form</h1>
+                    <h1>Recipe Form</h1>
 
-                <div class="form-input-material">
-                    <label>
-                        Recipe Name:
-                        <input 
-                            type="text" 
-                            name="recipeName"
-                            value={recipe.recipeName}
-                            onChange={handleChange}
-                            class="form-control-material"
-                        />
-                    </label>
-                </div>
-                <div class="form-input-material">
-                    <label>
-                        Ingredients:
-                        <input
-                            type="text" 
-                            name="ingredients"
-                            value={recipe.ingredients}
-                            onChange={handleChange}
-                            class="form-control-material"
-                        />
-                    </label>
-                </div>
-                <div class="form-input-material">
-                    <label>
-                        Instructions:
-                        <input 
-                            type="text" 
-                            name="instructions"
-                            value={recipe.instructions}
-                            onChange={handleChange}
-                            class="form-control-material"
-                        />
-                    </label>
-                </div>
-                <div class="form-input-material">
-                    <label>
-                        Image:
-                        <input 
-                            type="file" 
-                            name="image"
-                            onChange={handleChange}
-                            accept="image/*"
-                        />
-                    </label>
-                </div>
-                <div class="form-input-material">
-                    <label>
-                        Type of meal:
-                        <select 
-                            name="mealType"
-                            value={recipe.mealType}
-                            onChange={handleChange}
-                        >
-                            <option value="N/A">N/A</option>
-                            <option value="Asian">Asian</option>
-                            <option value="Italian">Italian</option>
-                            <option value="Mexican">Mexican</option>
-                            <option value="Indian">Indian</option>
-                            <option value="Spanish">Spanish</option>
-                        </select>
-                    </label>
-                </div>
-                <div>
-                    <button type="submit" class="form-submit-btn">Submit</button>
-                </div>
+                    <div class="form-input-material">
+                        <label>
+                            Recipe Name:
+                            <input 
+                                type="text" 
+                                name="recipeName"
+                                value={recipe.recipeName}
+                                onChange={handleChange}
+                                class="form-control-material"
+                            />
+                        </label>
+                    </div>
+                    <div class="form-input-material">
+                        <label>
+                            Ingredients:
+                            <input
+                                type="text" 
+                                name="ingredients"
+                                value={recipe.ingredients}
+                                onChange={handleChange}
+                                class="form-control-material"
+                            />
+                        </label>
+                    </div>
+                    <div class="form-input-material">
+                        <label>
+                            Instructions:
+                            <input 
+                                type="text" 
+                                name="instructions"
+                                value={recipe.instructions}
+                                onChange={handleChange}
+                                class="form-control-material"
+                            />
+                        </label>
+                    </div>
+                    <div class="form-input-material">
+                        <label>
+                            Image:
+                            <input 
+                                type="file" 
+                                name="image"
+                                onChange={handleChange}
+                                accept="image/*"
+                            />
+                        </label>
+                    </div>
+                    <div class="form-input-material">
+                        <label>
+                            Type of meal:
+                            <select 
+                                name="mealType"
+                                value={recipe.mealType}
+                                onChange={handleChange}
+                            >
+                                <option value="N/A">N/A</option>
+                                <option value="Asian">Asian</option>
+                                <option value="Italian">Italian</option>
+                                <option value="Mexican">Mexican</option>
+                                <option value="Indian">Indian</option>
+                                <option value="Spanish">Spanish</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div>
+                        <button type="submit" class="form-submit-btn">Submit</button>
+                    </div>
 
-            </div>
-        </form>
-        </container>
+                </div>
+            </form>
+        </div>
     );
 }
 

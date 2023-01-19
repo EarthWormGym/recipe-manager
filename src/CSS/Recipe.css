@@ -11,12 +11,6 @@ body {
   font-family: "Roboto", sans-serif;
   color: #10182f;
 }
-.container {
-  display: flex;
-  width: 1040px;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
 .card {
   margin: 10px;
   background-color: #fff;

@@ -1,11 +1,11 @@
 import React from 'react';
-import './Recipe.css'
+import './CSS/Recipe.css'
 
 const Recipe = ({recipes}) => {
 
     console.log(recipes);
     return recipes.map((recipe, index) => (
-        <div className="recipe" key={index} class="container">
+        <div className="recipe" key={index}>
             <div class="card">
                 <div class="card-header" key={recipe.id}>
                     <img src={recipe.recipeData.image} alt="image of meal" />
