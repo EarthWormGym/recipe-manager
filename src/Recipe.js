@@ -1,5 +1,7 @@
 import React from 'react';
 import './CSS/Recipe.css'
+import { RiCloseCircleLine } from 'react-icons/ri';
+import { TiEdit } from 'react-icons/ti';
 
 const Recipe = ({recipes}) => {
 
@@ -23,6 +25,10 @@ const Recipe = ({recipes}) => {
                     <p>
                         {recipe.recipeData.instructions}
                     </p>
+                </div>
+                <div className="icons">
+                    <RiCloseCircleLine />
+                    <TiEdit />
                 </div>
             </div>
         </div>
