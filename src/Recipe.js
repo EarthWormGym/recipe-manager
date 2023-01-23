@@ -3,13 +3,12 @@ import './CSS/Recipe.css'
 import { RiCloseCircleLine } from 'react-icons/ri';
 import { TiEdit } from 'react-icons/ti';
 
-const Recipe = ({recipes}) => {
+const Recipe = ({recipes, removeRecipe}) => {
 
-    console.log(recipes);
     return recipes.map((recipe, index) => (
         <div className="recipe" key={index}>
-            <div class="card">
-                <div class="card-header" key={recipe.id}>
+            <div class="card" key={recipe.id}>
+                <div class="card-header">
                     <img src={recipe.recipeData.image} alt="image of meal" />
                 </div>
                 <span class="tag tag-pink">{recipe.recipeData.mealType}</span>
@@ -27,7 +26,10 @@ const Recipe = ({recipes}) => {
                     </p>
                 </div>
                 <div className="icons">
-                    <RiCloseCircleLine />
+                    <RiCloseCircleLine 
+                    onClick={() => removeRecipe(recipe.id)}
+                    className="delete-icon"
+                    />
                     <TiEdit />
                 </div>
             </div>

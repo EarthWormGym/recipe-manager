@@ -12,13 +12,19 @@ function RecipeList() {
     setRecipes(newRecipes);
   };
 
+  const removeRecipe = id => {
+    const removeArr = [...recipes].filter(recipe => recipe.id !== id)
+
+    setRecipes(removeArr);
+  };
+
   return (
     <div>
       <div>
         <RecipeForm onSubmit={addRecipe} />  
       </div>
       <div class="list-container">
-        <Recipe recipes={recipes} />
+        <Recipe recipes={recipes} removeRecipe={removeRecipe}/>
       </div>
     </div>
   )
