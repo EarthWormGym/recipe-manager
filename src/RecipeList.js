@@ -5,6 +5,7 @@ import './CSS/RecipeList.css';
 
 function RecipeList() {
   const [recipes, setRecipes] = useState([]);
+  const [showRecipeForm, setShowRecipeForm] = useState(false);
 
   const addRecipe = recipe => {
     const newRecipes = [recipe, ...recipes]
@@ -20,9 +21,10 @@ function RecipeList() {
 
   return (
     <div>
-      <div>
-        <RecipeForm onSubmit={addRecipe} />  
-      </div>
+      <button onClick={() => setShowRecipeForm(true)}>
+          Add Recipe
+      </button>
+      {showRecipeForm && <RecipeForm onSubmit={addRecipe} />}
       <div class="list-container">
         <Recipe recipes={recipes} removeRecipe={removeRecipe}/>
       </div>
