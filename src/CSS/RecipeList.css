@@ -4,3 +4,17 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
   }
+
+.form-show-btn {
+  background-color: rgb(243, 116, 13); /* sets the background color of the button to blue */
+  color: white; /* sets the text color of the button to white */
+  padding: 12px 24px; /* sets the padding of the button to 12px top/bottom, 24px left/right */
+  border-radius: 4px; /* rounds the corners of the button with a 4px radius */
+  text-align: center; /* centers the text within the button */
+  transition: background-color 0.2s ease; /* sets a transition for the background-color property, to make the hover effect smooth */
+}
+
+.form-show-btn:hover {
+  background-color: rgb(204, 69, 6); /* sets the background color of the button to dark blue when hovered */
+  cursor: pointer; /* changes the cursor to a pointer when hovered */
+}
