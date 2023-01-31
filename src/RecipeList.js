@@ -24,6 +24,9 @@ function RecipeList() {
       <button className="form-show-btn" onClick={() => setShowRecipeForm(true)}>
         Add Recipe
       </button>
+      <button className="form-show-btn" onClick={() => setShowRecipeForm(false)}>
+        Close Recipe Form
+      </button>
       {showRecipeForm && <RecipeForm onSubmit={addRecipe} />}
       <div class="list-container">
         <Recipe recipes={recipes} removeRecipe={removeRecipe}/>

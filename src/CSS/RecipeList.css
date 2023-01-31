@@ -12,6 +12,8 @@
   border-radius: 4px; /* rounds the corners of the button with a 4px radius */
   text-align: center; /* centers the text within the button */
   transition: background-color 0.2s ease; /* sets a transition for the background-color property, to make the hover effect smooth */
+  margin-bottom: 20px;
+  margin-right: 50px;
 }
 
 .form-show-btn:hover {
