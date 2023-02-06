@@ -1,7 +1,6 @@
 import React from 'react';
 import './CSS/Recipe.css'
 import { RiCloseCircleLine } from 'react-icons/ri';
-import { TiEdit } from 'react-icons/ti';
 
 const Recipe = ({recipes, removeRecipe}) => {
 
@@ -30,7 +29,6 @@ const Recipe = ({recipes, removeRecipe}) => {
                     onClick={() => removeRecipe(recipe.id)}
                     className="delete-icon"
                     />
-                    <TiEdit />
                 </div>
             </div>
         </div>
