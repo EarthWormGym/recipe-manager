@@ -9,4 +9,6 @@ Here is the initial page that you are met with on my application in which you ca
 This is the form itself and some basic example inputs
 
 ![screenshot3](/screenshots/Screenshot%20from%202023-02-13%2021-03-31.png)
-And here is the application populated with a few example recipes
+And here is the application populated with a few example recipes.
+
+The user also has the option to remove any recipes they wish using the small x icon in the bottom left of the seperate recipe cards.
